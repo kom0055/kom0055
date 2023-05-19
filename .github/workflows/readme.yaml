@@ -14,16 +14,19 @@ jobs:
         with:
           # Your GitHub token
           token: ${{ secrets.METRICS_TOKEN }}
-
+          filename: assets/github-metrics.svg
           # Options
           user: kom0055
           template: classic
           base: header, activity, community, repositories, metadata
+          base_indepth: true
           config_timezone: Asia/Shanghai
           plugin_followup: yes
           plugin_followup_sections: repositories
-          repositories: 1000
+          repositories: 100000
           repositories_forks: no
+          repositories_affiliations: owner, collaborator, organization_member
+          commits_authoring: User, login
   snake:
     runs-on: ubuntu-latest
     steps:
